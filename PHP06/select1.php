@@ -4,7 +4,7 @@ try {
     //dbname=gs_db
     //host=localhsot
     //Password:MAMP='root',XAMPP=''
-    $pdo = new PDO('mysql:dbname=gs＿db;charset=utf8;host=localhost','root','root');
+    $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','root');
 } catch (PDOException $e) {
     exit('DBConnectError'.$e->getMessage());
 }
@@ -23,7 +23,7 @@ if($status==false) {
 }else{
     //Selectデータで取得したレコードの数だけ自動でループする
     while( $res = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $view .= "<p>".$res["name"].",".$res["email"]."</p>";//".="は文字と変数をくっつける時に使う
+        $view .= "<p>".$res["id"].",".$res["name"].",".$res["email"].",".$res["age"]."</p>"; //".="は文字と変数をくっつける時に使う
     }
 }
 ?>

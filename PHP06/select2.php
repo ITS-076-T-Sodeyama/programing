@@ -23,7 +23,7 @@ if($status==false) {
 }else{
     //Selectデータで取得したレコードの数だけ自動でループする
     while( $res = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $view .= "SQLError:"; //".="は文字と変数をくっつける時に使う
+        $view .= "<p>".$res["id"].",".$res["name"].",".$res["email"].",".$res["age"].",".$res["indate"]."</p>"; //".="は文字と変数をくっつける時に使う
     }
 }
 ?>
